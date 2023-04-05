@@ -1,0 +1,20 @@
+{% extends 'base.html' %} {% load static %} {% block title %} Update_Blog {% endblock %} {% block content %}
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+        <h5 class="card-title">Blog</h5>
+        <form action="" method="POST">
+            {% csrf_token %}
+            <p class="card-text">
+                {% if fm %}
+                <div>
+                    {% for f in fm %}
+                    <p>{{f.tags}}{{f}}</p>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </p>
+            <button type="submit" class="btn btn-primary signup">Edit</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

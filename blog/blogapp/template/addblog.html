@@ -1,0 +1,23 @@
+ {% extends 'base.html' %} {% load static %} {% block title %} Add blog {% endblock %} {% block content %}
+<div class="col-3"></div>
+<div class="col-6">
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">ADD BLOG</h5>
+            <form action="" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <p class="card-text">
+                    {% if fm %}
+                    <div>
+                        {% for f in fm %}
+                        <p>{{f.tags}}{{f}}</p>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </p>
+                <button type="submit" class="btn btn-primary signup">ADD</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

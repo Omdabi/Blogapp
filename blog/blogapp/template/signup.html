@@ -1,0 +1,23 @@
+{% extends 'base.html' %} {% load static %} {% block title %} Signup {% endblock %} {% block content %}
+<div class="col-3"></div>
+<div class="col-6">
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">SIGNUP</h5>
+            <form action="" method="POST">
+                {% csrf_token %}
+                <p class="card-text">
+                    {% if fm %}
+                    <div>
+                        {% for f in fm %}
+                        <p>{{f.tag}}{{f}}</p>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </p>
+                <button type="submit" class="btn btn-primary signup">Sign_up</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
